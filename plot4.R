@@ -2,6 +2,7 @@
 household_power_consumption <- read.csv("F:/R/project1/household_power_consumption.txt", sep=";", na.strings="?", stringsAsFactors=FALSE)
 household_power_consumption$Date<- as.Date(household_power_consumption$Date, "%d/%m/%Y")
 subset <- subset(household_power_consumption, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
+
 ## paste date and time together and convert data type
 datetime <- paste(as.Date(subset$Date), subset$Time)
 subset$datetime <- as.POSIXct(datetime)
